@@ -12,7 +12,7 @@ def about(request):
 	n=request.POST.get("name")
 	e=request.POST.get("email")
     # return HttpResponse('Hello from Python!')
-    return render(request, "about.html")
+	return render(request, "about.html")
 
 def notification(request):
     # return HttpResponse('Hello from Python!')
