@@ -12,6 +12,14 @@ def about(request):
     # return HttpResponse('Hello from Python!')
     return render(request, "about.html")
 
+def notification(request):
+    # return HttpResponse('Hello from Python!')
+    return render(request, "notification.html")
+
+def contact(request):
+    # return HttpResponse('Hello from Python!')
+    return render(request, "contact.html")
+
 
 def db(request):
 
