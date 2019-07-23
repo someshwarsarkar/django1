@@ -24,6 +24,10 @@ def contact(request):
 def add_product(request):
 	return render(request, "add_product.html")
 def insproduct(request):
+	name=request.POST.get("name")
+	price=request.POST.get("price")
+	quantity=request.POST.get("quantity")
+	p_date=request.POST.get("p_date")
 	return render(request, "insproduct.html")
 
 def db(request):
