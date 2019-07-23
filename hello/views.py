@@ -24,7 +24,7 @@ def contact(request):
 def add_product(request):
 	return render(request, "add_product.html")
 def insproduct(request):
-	return render(request, "insproduct")
+	return render(request, "insproduct.html")
 
 def db(request):
 
