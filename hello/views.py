@@ -28,7 +28,7 @@ def insproduct(request):
 	price=request.POST.get("price")
 	quantity=request.POST.get("quantity")
 	p_date=request.POST.get("p_date")
-	return render(request, "insproduct.html",{"name":name})
+	return render(request, "insproduct.html",{"name":name, "price":price, "quantity":quantity, "p_date":p_date})
 
 def db(request):
 
