@@ -20,6 +20,7 @@ urlpatterns = [
     path("notification/", hello.views.notification, name="notification"),
     path("contact/", hello.views.contact, name="contact"),
 	path("add_product/", hello.views.add_product, name="add_product"),
+	path("insproduct/", hello.views.insproduct, name="insproduct"),
     path("db/", hello.views.db, name="db"),
     path("admin/", admin.site.urls),
 ]
