@@ -21,6 +21,8 @@ def notification(request):
 def contact(request):
     # return HttpResponse('Hello from Python!')
     return render(request, "contact.html")
+def add_product(request):
+	return render(request, "add_product.html")
 
 
 def db(request):

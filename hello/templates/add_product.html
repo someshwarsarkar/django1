@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Form</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Latest compiled and minified CSS -->
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Latest compiled and minified CSS -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
 <!-- jQuery library -->
@@ -16,10 +16,10 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12">
+				<nav class="navbar navbar-expand-md bg-dark navbar-dark">
   <!-- Brand -->
   <a class="navbar-brand" href="#">Demo</a>
 
@@ -41,13 +41,13 @@
         <a class="nav-link" href="#">Gallery<span class="badge badge-pill badge-warning">6</span></a>
       </li> 
       <li class="nav-item">
-        <a class="nav-link" href="#">Notification<span class="badge badge-pill badge-danger">18</span></a>
+        <a class="nav-link" href="/notification/">Notification<span class="badge badge-pill badge-danger">18</span></a>
       </li> 
       <li class="nav-item">
         <a class="nav-link" href="#" data-toggle="modal" data-target="#LogIn">Log In</a>
       </li> 
       <li class="nav-item">
-        <a class="nav-link" href="#">Contact</a>
+        <a class="nav-link" href="/contact/">Contact</a>
       </li> 
       <li class="nav-item">
         <a class="nav-link" href="/add_product/">Add Product</a>
@@ -55,18 +55,16 @@
     </ul>
   </div> 
 </nav>
-<h1>Home</h1>
-            </div>
-        </div>
-        <form action="/about/" method="post">
-    <p>Name</p>
-    <p><input type="name" name="name" placeholder="Enter Name" required=""></p>
-    <p>Email</p>
-    <p><input type="email" name="email" placeholder="Eneter Email" required=""></p>
-    <p><input type="submit" name="submit" value="submit"></p>
-  </form>
-    </div>
-  
-
+<h2 align="center"></h2>
+<p>Product Name</p>
+<p><input type="text" name="name" placeholder="Enter Name"></p>
+<p>Price</p>
+<p><input type="number" name="price" placeholder="Enter Price In Rs"></p>
+<P><input type="number" name="quantity" placeholder="Enter Quantity"></P>
+<p><input type="date" name="date"></p>
+<p><input type="submit" name="save" value="save"></p>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
