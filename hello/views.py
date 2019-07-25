@@ -9,18 +9,18 @@ def index(request):
     return render(request, "index.html")
 def p_import(request):
     return render(request, "import.html")
-def p_add(request):
-    return render(request, "p_add.html")
-def p_manage(request):
-    return render(request, "p_manage.html")
-def c_add(request):
-    return render(request, "c_manage.html")
-def c_manage(request):
-    return render(request, "c_manage.html")
-def w_add(request):
-    return render(request, "w_add.html")
-def w_manage(request):
-    return render(request, "w_manage.html")
+def add_product(request):
+    return render(request, "add_product.html")
+def manage_product(request):
+    return render(request, "manage_product.html")
+def add_category(request):
+    return render(request, "add_category.html")
+def manage_category(request):
+    return render(request, "manage_category.html")
+def add_warehouse(request):
+    return render(request, "add_warehouse.html")
+def manage_warehouse(request):
+    return render(request, "manage_warehouse.html")
 def export(request):
     return render(request, "export.html")
 def invoice(request):
