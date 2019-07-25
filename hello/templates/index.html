@@ -1,26 +1,203 @@
+{% load staticfiles %}
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Form</title>
+	<title>CarGo</title>
+	<link rel="stylesheet" type="text/css" href="{ % 'index.css' %}">
+	<script type="text/javascript" src="{ % 'index.js' %}"></script>
+	<!-- Latest compiled and minified CSS -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
  
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!--For Mobile View-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--/Mobile View-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- pie chart file start here-->
+
+     <!--Add a reference to the Chart API at google.com:-->
+     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> 
+     <!-- javascript file for pie chart 1-->
+    
+
+      <script src = "https://code.highcharts.com/highcharts.js"></script>  
+      <script src = "https://code.highcharts.com/highcharts-3d.js"></script>
+      <script type="text/javascript" src="{ % 'pie.js' %}"></script>
+
+
+    <!--/ pie chart file ends here-->
+<style type="text/css">
+	
+</style>
 </head>
 <body>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                {% include 'navbar.html' %}
-<h1>Home</h1>
+	<div id="mySidebar" class="sidebar">
+  <div style="float: right;">
+  	<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  </div>
+
+  <div style="float: left;">
+    <p style="margin-left: 10px;"><input type="text" name="search"  placeholder=" Search...">
+    <button><i class="fa fa-search" style="width: 15px; height: 20px; margin-top: 4px;"></i></button>
+  </p>
+
+    <a href="/"><i class="fa fa-home" aria-hidden="true"></i> Home</a>
+    <a href="/about/"><i class="fa fa-plus-square" aria-hidden="true"></i> Import</a>
+    <a href="#product" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-sort-amount-asc" aria-hidden="true"></i> Product</a>
+     <ul class="collapse list-unstyled" id="product">
+                        <li>
+                            <a href="/add_product/">Add</a>
+                        </li>
+                        <li>
+                            <a href="/manage_product/">Manage</a>
+                        </li>
+                    </ul>
+    <a href="#category" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-anchor" aria-hidden="true"></i>Categories</a>
+     <ul class="collapse list-unstyled" id="category">
+                        <li>
+                            <a href="/add_category/">Add</a>
+                        </li>
+                        <li>
+                            <a href="/manage_category/">Manage</a>
+                        </li>
+                    </ul>
+    <a href="#warehouse" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fa fa-institution" aria-hidden="true"></i> Warehouse</a>
+     <ul class="collapse list-unstyled" id="warehouse">
+                        <li>
+                            <a href="/add_warehouse/">Add</a>
+                        </li>
+                        <li>
+                            <a href="/manage_warehouse/">Manage</a>
+                        </li>
+                    </ul>
+    <a href="/export/"><i class="fa fa-paper-plane" aria-hidden="true"></i> Export</a>
+    <a href="/invoice/"><i class="fa fa-newspaper-o" aria-hidden="true"></i> Invoice</a>
+    <a href="/report/"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Report</a>
+    <a href="/contact_us/"><i class="fa fa-phone" aria-hidden="true"></i> Contact Us</a>
+  </div>
+</div>
+<div class="fixed-top">
+<div class="navbar">
+  <button class="openbtn" onclick="openNav()">&#9776;</button>
+
+<p><strong><span style="color: green;">Car</span><span style="color: #FFA500;">Go</span></strong></p>
+    <a href="" >Log Out</a>
+</div>
+</div>
+<div id="main">
+   <div style="width: 100%; height: 50px; color: white; margin-top: 15px">
+   </div>
+   <div>
+    <!-- card container as row  -->
+           <div class="row">
+            <!-- card 1 container  -->
+            <div class="col-xl-3 col-sm-6 mb-3">
+            <div class="card text-white bg-danger o-hidden h-100">
+              <div class="card-body">
+                <div class="card-body-icon">
+                  <i class="fas fa-fw fa-life-ring"></i>
+                </div>
+                <div class="mr-5">13 New Tickets!</div>
+              </div>
+              <a class="card-footer text-white clearfix small z-1" href="#">
+                <span class="float-left">View Details</span>
+                <span class="float-right">
+                  <i class="fas fa-angle-right"></i>
+                </span>
+              </a>
             </div>
-        </div>
-        <form action="/about/" method="post">
-    <p>Name</p>
-    <p><input type="name" name="name" placeholder="Enter Name" required=""></p>
-    <p>Email</p>
-    <p><input type="email" name="email" placeholder="Eneter Email" required=""></p>
-    <p><input type="submit" name="submit" value="submit"></p>
-  </form>
+          </div>
+          <!-- /card 1 container  -->
+          <!-- card 2 container  -->
+          <div class="col-xl-3 col-sm-6 mb-3">
+            <div class="card text-white bg-danger o-hidden h-100">
+              <div class="card-body">
+                <div class="card-body-icon">
+                  <i class="fas fa-fw fa-life-ring"></i>
+                </div>
+                <div class="mr-5">13 New Tickets!</div>
+              </div>
+              <a class="card-footer text-white clearfix small z-1" href="#">
+                <span class="float-left">View Details</span>
+                <span class="float-right">
+                  <i class="fas fa-angle-right"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <!-- /card 2 container  -->
+          <!-- card 3 container  -->
+
+          <div class="col-xl-3 col-sm-6 mb-3">
+            <div class="card text-white bg-danger o-hidden h-100">
+              <div class="card-body">
+                <div class="card-body-icon">
+                  <i class="fas fa-fw fa-life-ring"></i>
+                </div>
+                <div class="mr-5">13 New Tickets!</div>
+              </div>
+              <a class="card-footer text-white clearfix small z-1" href="#">
+                <span class="float-left">View Details</span>
+                <span class="float-right">
+                  <i class="fas fa-angle-right"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+          <!-- /card 3 container  -->
+          <!-- card 4 container  -->
+
+          <div class="col-xl-3 col-sm-6 mb-3">
+            <div class="card text-white bg-danger o-hidden h-100">
+              <div class="card-body">
+                <div class="card-body-icon">
+                  <i class="fas fa-fw fa-life-ring"></i>
+                </div>
+                <div class="mr-5">13 New Tickets!</div>
+              </div>
+              <a class="card-footer text-white clearfix small z-1" href="#">
+                <span class="float-left">View Details</span>
+                <span class="float-right">
+                  <i class="fas fa-angle-right"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+         <!-- /card 4 container  -->
+          
+
+
+
+      </div>
+      <!-- /card container as row   -->
+      <!--Pie Chart-->
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+       <div id="pie1"></div>
+     </div>
+      <div class="col-md-6">
+      <div id="pie2"></div>
     </div>
+  </div>
+</div>
+
+
+      <!--/Pie Chart-->
+   </div>
   
+</div>
 
 </body>
+<script type="text/javascript">
+         
+      </script>
+
 </html>
