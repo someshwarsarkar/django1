@@ -1,11 +1,12 @@
 {% load staticfiles %}
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>CarGo</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
-  <script type="text/javascript" src="{% static 'index.js' %}"></script>
-    <!-- Latest compiled and minified CSS -->
+	<title>CarGo</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+	<script type="text/javascript" src="{% static 'index.js' %}"></script>
+	<!-- Latest compiled and minified CSS -->
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
  
@@ -24,9 +25,22 @@
 
      <!--Add a reference to the Chart API at google.com:-->
      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> 
+     <!-- javascript file for pie chart 1-->
     
-<style type="text/css">
-    table {
+
+      <script src = "https://code.highcharts.com/highcharts.js"></script>  
+      <script src = "https://code.highcharts.com/highcharts-3d.js"></script>
+      <script type="text/javascript" src="{% static 'pie.js' %}"></script>
+
+
+    <!--/ pie chart file ends here-->
+
+
+
+
+
+<style>
+table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
@@ -42,19 +56,44 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 </style>
+
+
+<style type="text/css">
+
+	#f{background-color: #ebe4c0;
+		padding: 5px;
+		padding-top: 50px;
+		position: absolute;
+	    right: 0px;
+	}
+	.g{
+		overflow-y: scroll;
+	}
+	.m{
+		width: 86%;
+	}
+	
+
+	</style>
+
+
+
+
 </head>
 <body>
-    {% include "sidebar.html" %}
+  {% include "sidebar.html" %}
   {% include "navbar.html" %}
-<div id="main" class="g">
-          <div class="row">
+
+        
+        <div id="main" class="g">
+        	<div class="row">
 
 
 
-            <div class="m" >
+        		<div class="m" >
 
-    <h2>SALERS BILL</h2>
-    <select >
+		<h2>SALERS BILL</h2>
+		<select >
         <option  selected="">Coustomer</option>
         <option >Stock transfar</option>
         </select>
@@ -68,39 +107,42 @@ tr:nth-child(even) {
     <th>Total Price</th>
   </tr>
 </table>
-    
-    
-  </div>
-    
-  
+		
+		
+	</div>
+		
+	
 
     
-  <div  id="f">
-    <form  >
-      <p>Coustomer name</p>
-      <p><input type="text" name=""></p>
-      <p>Coustomer numbe</p>
-      <p><input type="number" name=""></p>
-      <p>Tax</p>
-      <p><input type="number" name="tax"></p>
-      <p>OFF</p>
-      <p><input type="number" name=""></p>
-      <p>EXTRA CHARGE</p>
-      <p><input type="number" name=""></p>
-      <p>grand total</p>
-      <p><input type="number" name=""></p>
-      <p>Recived</p>
-      <p><input type="number" name=""></p>
-      <p>remainding</p>
-      <p><input type="number" name=""></p>
+	<div  id="f">
+		<form  >
+			<p>Coustomer name</p>
+			<p><input type="text" name=""></p>
+			<p>Coustomer numbe</p>
+			<p><input type="number" name=""></p>
+			<p>Tax</p>
+			<p><input type="number" name="tax"></p>
+			<p>OFF</p>
+			<p><input type="number" name=""></p>
+			<p>EXTRA CHARGE</p>
+			<p><input type="number" name=""></p>
+			<p>grand total</p>
+			<p><input type="number" name=""></p>
+			<p>Recived</p>
+			<p><input type="number" name=""></p>
+			<p>remainding</p>
+			<p><input type="number" name=""></p>
 
-    </form>
+		</form>
 
-  </div>
+	</div>
 
      
 
-  </div>
-  </div>
+	</div>
+	</div>
+	
+
+
 </body>
 </html>
