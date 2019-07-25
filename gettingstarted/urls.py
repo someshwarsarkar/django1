@@ -27,6 +27,10 @@ urlpatterns = [
 	path("invoice/", hello.views.invoice, name="invoice"),
 	path("report/", hello.views.report, name="report"),
 	path("contact_us/", hello.views.contact_us, name="contact_us"),
+	path("headbar/", hello.views.headbar, name="headbar"),
+	path("navbar/", hello.views.navbar, name="navbar"),
+	path("invoicesales/", hello.views.invoicesales, name="invoicesales"),
+	path("coustomer_add/", hello.views.coustomer_add, name="coustomer_add"),
     path("db/", hello.views.db, name="db"),
     path("admin/", admin.site.urls),
 ]

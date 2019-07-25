@@ -35,6 +35,16 @@ def navbar(request):
     return render(request, "navbar.html")
 def sidebar(request):
     return render(request, "sidebar.html")
+
+def headbar(request):
+    return render(request, "headbar.html")
+
+def invoicesales(request):
+    return render(request, "invoicesales.html")
+def coustomer_add(request):
+    return render(request, "coustomer_add.html")
+def p_import(request):
+    return render(request, "import.html")
 def db(request):
 
     greeting = Greeting()
