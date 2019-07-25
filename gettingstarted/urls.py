@@ -17,7 +17,7 @@ import hello.views
 urlpatterns = [
     path("", hello.views.index, name="index"),
     path("import_product/", hello.views.p_import, name="p_import"),
-    path("p_add/", hello.views.p_add, name="p_add"),
+    path("add_product/", hello.views.p_add, name="p_add"),
     path("manage_product/", hello.views.p_manage, name="p_manage"),
 	path("add_category/", hello.views.c_add, name="c_add"),
 	path("manage_category/", hello.views.c_manage, name="c_manage"),
