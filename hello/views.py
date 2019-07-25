@@ -18,7 +18,7 @@ def c_add(request):
 def c_manage(request):
     return render(request, "c_manage.html")
 def w_add(request):
-    return(request, "w_add.html")
+    return render(request, "w_add.html")
 def w_manage(request):
     return render(request, "w_manage.html")
 def export(request):
