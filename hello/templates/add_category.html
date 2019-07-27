@@ -26,7 +26,11 @@
      <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> 
      
 <style type="text/css">
-    
+    .frm p input
+    {
+      width: 250px;
+      border-radius: 2px;
+    }
 </style>
 </head>
 <body>
@@ -37,12 +41,13 @@
    </div>
    <div>
     <h2 align="center">Add Category</h2>
-          
+<form class="frm" action="" align="center" method="post">
 <p><h4>Name</h4></p>
 <p><input type="text" name="name" placeholder="Enter Name"></p>
 <p><h4>GST Slap</h4></p>
 <p><input type="number" name="gst" placeholder="GST %"></p>
-<p class="btn btn-primary">Add</p>    
+<p class="btn btn-primary">Add</p> 
+</form>   
    </div>
 </div>
 </body>
