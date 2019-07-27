@@ -106,6 +106,7 @@ tr:nth-child(even) {
     <th>Barcode</th>
     <th>Product name</th>
     <th>Qty </th>
+    <th>Unit Price</th>
     <th>Total Price</th>
   </tr>
   </thead>
@@ -114,7 +115,8 @@ tr:nth-child(even) {
   		<th><input type="text" name="iqrcode" required=""></th>
   		<th><input type="text" name="ipname" required=""></th>
   		<th><input type="number" min="1" name="iqty" required=""></th>
-  		<th><input type="number" min="1" name="iqrcode" required=""></th>
+  		<th><input type="number" min="1000" name="unitprice" required=""></th>
+  		<th><input type="number" min="1000" name="tprice" required=""></th>
   	</tr>
   </tbody>
 </table>
@@ -127,22 +129,20 @@ tr:nth-child(even) {
     
 	<div  id="f">
 		<form  >
-			<p>Coustomer name</p>
-			<p><input type="text" name=""></p>
-			<p>Coustomer numbe</p>
-			<p><input type="number" name=""></p>
-			<p>Tax</p>
-			<p><input type="number" name="tax"></p>
-			<p>OFF</p>
-			<p><input type="number" name=""></p>
-			<p>EXTRA CHARGE</p>
-			<p><input type="number" name=""></p>
-			<p>grand total</p>
-			<p><input type="number" name=""></p>
-			<p>Recived</p>
-			<p><input type="number" name=""></p>
-			<p>remainding</p>
-			<p><input type="number" name=""></p>
+			<p>Coustomer Name</p>
+			<p><input type="text" name="cname" placeholder="Enter Name"></p>
+			<p>Coustomer number</p>
+			<p><input type="number" minlength="5" maxlength="13" name="cnumber" placeholder="Enter Number"></p>
+			<p>gst</p>
+			<p><input type="number" name="gst" placeholder="%"></p>
+			<p>Discount</p>
+			<p><input type="number" name="discount" placeholder="%"></p>
+			<p>Total</p>
+			<p><input type="number" name="total" placeholder="Total"></p>
+			<p>Paid</p>
+			<p><input type="number" min="1000" name="paid" placeholder="paid"></p>
+			<p>Remaining</p>
+			<p><input type="number" min="0" name="remaining" placeholder="remaining"></p>
 
 		</form>
 
