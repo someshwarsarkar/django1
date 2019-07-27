@@ -20,7 +20,7 @@ window.onscroll = function() {
   }
   prevScrollpos = currentScrollPos;
 }*/
-document.getElementById("myBtn").addEventListener("click", openNav);
+document.getElementById("openbtn").addEventListener("click", openNav);
 
 var menuState = 0 // close
 function openNav() {
