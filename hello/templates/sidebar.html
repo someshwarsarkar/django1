@@ -3,12 +3,15 @@
 <body>
     <div id="mySidebar" class="sidebar">
   <div style="float: right;">
-    <button class="w3-bar-item w3-button w3-large"
-  onclick="w3_close()">Close &times;</button>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   </div>
 
   <div style="float: left;">
-    
+    <div>
+    <p style="margin-left: 10px;"><input type="text" name="search"  placeholder=" Search...">
+    <button><i class="fa fa-search" style="width: 15px; height: 20px; margin-top: 4px;"></i></button>
+  </p>
+  </div>
     <p ><input type="text" name="search" placeholder=" Search..."><button><i class="fa fa-search" aria-hidden="true"></i></button></p>
     <p class="index_css"><a href="/"><i class="fa fa-home" aria-hidden="true"></i> Home</a></p>
     <p class="import_css"><a href="/import_product/"><i class="fa fa-plus-square" aria-hidden="true"></i> Import</a></p>
@@ -46,9 +49,4 @@
   </div>
 </div>
 </body>
-<script>
-function w3_close() {
-    document.getElementById("mySidebar").style.display = "none";
-}
-</script>
 </html>
