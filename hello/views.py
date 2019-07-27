@@ -7,8 +7,8 @@ from .models import Greeting
 def index(request):
     # return HttpResponse('Hello from Python!')
     return render(request, "index.html")
-def front(request):
-    return render(request, "front.html")
+def login(request):
+    return render(request, "login.html")
 def p_import(request):
     return render(request, "import.html")
 def add_product(request):
