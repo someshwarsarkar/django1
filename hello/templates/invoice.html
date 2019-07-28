@@ -44,7 +44,7 @@ tr:nth-child(even) {
   </style>
 
   <style type="text/css">
-  .export_css{
+  .invoice_css{
    background-color: #ffffff;
   }
 
@@ -63,6 +63,7 @@ tr:nth-child(even) {
           <div style="width: 100%; height: 50px; color: white;">
    </div>
           <div class="row">
+            <form name="invoice_form" action="invoice_hid.html" method="post">
 
 
 
@@ -78,7 +79,7 @@ tr:nth-child(even) {
 <table cellspacing="0">
   <thead>
   <tr>
-    <th><p>Sl No.</p></th>
+    <th><p>SL No.</p></th>
     <th>Barcode</th>
     <th>Product name</th>
     <th>Qty </th>
@@ -89,11 +90,11 @@ tr:nth-child(even) {
   <tbody>
     <tr>
       <td></td>
-      <td><input type="text" name="iqrcode" required=""></td>
-      <td><input type="text" name="ipname" required=""></td>
-      <td><input type="number" min="1" name="iqty" required=""></td>
-      <td><input type="number" min="1000" name="unitprice" required=""></td>
-      <td><input type="number" min="1000" name="tprice" required=""></td>
+      <td><input type="text" name="invoice_barcode" required=""></td>
+      <td><input type="text" name="invoice_pdt_name" required=""></td>
+      <td><input type="number" min="1" name="invoice_pdt_qty" required=""></td>
+      <td><input type="number" name="invoice_unitprice" required=""></td>
+      <td><input type="number" name="invoice_totalprice" required=""></td>
     </tr>
   </tbody>
 </table>
@@ -106,27 +107,27 @@ tr:nth-child(even) {
     
   <div  id="f">
     <form  >
-      <p>Coustomer Name</p>
-      <p><input type="text" name="cname" placeholder="Enter Name"></p>
-      <p>Coustomer number</p>
-      <p><input type="number" minlength="5" maxlength="13" name="cnumber" placeholder="Enter Number"></p>
+      <p>Customer Name</p>
+      <p><input type="text" name="invoice_cname" placeholder="Enter Name"></p>
+      <p>Customer Number</p>
+      <p><input type="number" minlength="5" maxlength="13" name="invoice_cnumber" placeholder="Enter Number" required=""></p>
       <p>GST</p>
-      <p><input type="number" name="gst" placeholder="Dis. %"></p>
+      <p><input type="number" name="invoice_gst" placeholder="Dis. %" required=""></p>
       <p>Discount</p>
-      <p><input type="number" name="discount" placeholder="GST %"></p>
+      <p><input type="number" name="invoice_discount" placeholder="GST %"></p>
       <p>Total</p>
-      <p><input type="number" name="total" placeholder="Total"></p>
+      <p><input type="number" name="invoice_total" placeholder="Total" required=""></p>
       <p>Paid</p>
-      <p><input type="number" min="1000" name="paid" placeholder="Paid"></p>
+      <p><input type="number" min="1000" name="invoice_paid" placeholder="Paid Amount" required=""></p>
       <p>Remaining</p>
-      <p><input type="number" min="0" name="remaining" placeholder="Remaining"></p>
+      <p><input type="number" min="0" name="invoice_remaining" placeholder="Remaining Amount" required=""></p>
 
     </form>
 
   </div>
 
      
-
+</form>
   </div>
   </div>
   
