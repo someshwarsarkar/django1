@@ -21,8 +21,8 @@ function fur() {
   else 
 	{
   
-  sidebar.style.width = "20px";
-  main.style.marginLeft = "20px";
+  sidebar.style.width = "0px";
+  main.style.marginLeft = "0px";
   
 	}
 }
