@@ -13,6 +13,12 @@ def p_import(request):
     return render(request, "import.html")
 def add_product(request):
     return render(request, "add_product.html")
+def add_pdt_hid(request):
+    pdt_barcode=request.POST.get("pdt_barcode")
+    pdt_name=request.POST.get("pdt_name")
+    pdt_buyingprice=request.POST.get("pdt_buyingprice")
+    pdt_sellingprice=request.POST.get("pdt_sellingprice")
+    return render(request, "add_product.html",{"pdt_barcode":pdt_barcode, "pdt_name":pdt_name, "pdt_buyingprice":pdt_buyingprice, "pdt_sellingprice":pdt_sellingprice})
 def manage_product(request):
     return render(request, "manage_product.html")
 def add_category(request):

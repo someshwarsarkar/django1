@@ -1,60 +1,142 @@
 {% load staticfiles %}
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>CarGo</title>
-{% include "hlink.html" %}
-     
+  <title>CarGo</title>
+  {% include "hlink.html" %}
+
+
+
 <style type="text/css">
-  .invoice_css{
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+  #f{background-color: #ebe4c0;
+    padding: 5px;
+    padding-top: 50px;
+    position: absolute;
+      right: 0px;
+    height: 100%;
+  }
+  .g{
+    overflow-y: scroll;
+  }
+  .m{
+    width: 86%;
+    overflow-x: scroll;
+  }
+  
+
+  </style>
+
+  <style type="text/css">
+  .export_css{
    background-color: #ffffff;
   }
 
 </style>
+
+
+
+
 </head>
 <body>
-    {% include "sidebar.html" %}
+  {% include "sidebar.html" %}
   {% include "navbar.html" %}
-<div id="main" align="center">
-   <div style="width: 100%; height: 50px; color: white;">
+
+        
+        <div id="main" class="g">
+          <div style="width: 100%; height: 50px; color: white;">
    </div>
-   <div>
-    <h2 align="center" style="color: #8600b3;">Invoice list</h2>
-    <table border="1px" cellpadding="7px" cellspacing="4px" contextmenu="center">
-    <thead>
-        <tr>
-          <th><p>Sl No.</p></th>
-      <th><p>Invoice number</p></th>
+          <div class="row">
 
-      <th><p>date</p></th>
-   
-      <th><p>coustomer Name</p></th>
+
+
+            <div class="m" >
+
     
-       <th><p>coustomer number</p></th>
-    
-       <th><p>amount</p></th>
-       </tr>
-    
-    </thead>
-
-    <tbody>
-        <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            
-
-        </tr>
-
-    </tbody>
-    
+    <select >
+        <option  selected="">Coustomer</option>
+        <option >Stock transfar</option>
+        </select>
 
 
+<table cellspacing="0">
+  <thead>
+  <tr>
+    <th><p>Sl No.</p></th>
+    <th>Barcode</th>
+    <th>Product name</th>
+    <th>Qty </th>
+    <th>Unit Price</th>
+    <th>Total Price</th>
+  </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td></td>
+      <td><input type="text" name="iqrcode" required=""></td>
+      <td><input type="text" name="ipname" required=""></td>
+      <td><input type="number" min="1" name="iqty" required=""></td>
+      <td><input type="number" min="1000" name="unitprice" required=""></td>
+      <td><input type="number" min="1000" name="tprice" required=""></td>
+    </tr>
+  </tbody>
 </table>
-   </div>
-</div>
+    
+    
+  </div>
+    
+  
+
+    
+  <div  id="f">
+    <form  >
+      <p>Coustomer Name</p>
+      <p><input type="text" name="cname" placeholder="Enter Name"></p>
+      <p>Coustomer number</p>
+      <p><input type="number" minlength="5" maxlength="13" name="cnumber" placeholder="Enter Number"></p>
+      <p>GST</p>
+      <p><input type="number" name="gst" placeholder="Dis. %"></p>
+      <p>Discount</p>
+      <p><input type="number" name="discount" placeholder="GST %"></p>
+      <p>Total</p>
+      <p><input type="number" name="total" placeholder="Total"></p>
+      <p>Paid</p>
+      <p><input type="number" min="1000" name="paid" placeholder="Paid"></p>
+      <p>Remaining</p>
+      <p><input type="number" min="0" name="remaining" placeholder="Remaining"></p>
+
+    </form>
+
+  </div>
+
+     
+
+  </div>
+  </div>
+  
+
+
 </body>
 </html>
+
+
+
+
+
+
