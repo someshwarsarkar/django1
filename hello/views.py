@@ -37,6 +37,8 @@ def navbar(request):
     return render(request, "navbar.html")
 def sidebar(request):
     return render(request, "sidebar.html")
+def stock(request):
+    return render(request, "stock.html")
 def db(request):
 
     greeting = Greeting()

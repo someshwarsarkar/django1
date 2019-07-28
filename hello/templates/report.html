@@ -3,44 +3,56 @@
 <html>
 <head>
     <title>CarGo</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
-  <script type="text/javascript" src="{% static 'index.js' %}"></script>
-    <!-- Latest compiled and minified CSS -->
 
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
- 
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+{% include "hlink.html" %}
+<script type="text/javascript" src="{% static 'linechart.js' %}"></script> 
 
-<!-- Popper JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-<!--For Mobile View-->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--/Mobile View-->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- pie chart file start here-->
-
-     <!--Add a reference to the Chart API at google.com:-->
-     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> 
-    
 <style type="text/css">
   .report_css{
    background-color: #ffffff;
   }
 
-</style>
+</style>   
+
 </head>
 <body>
-    {% include "sidebar.html" %}
+  {% include "sidebar.html" %}
   {% include "navbar.html" %}
-<div id="main">
+<div id="main" >
    <div style="width: 100%; height: 50px; color: white;">
    </div>
-   <div>
-    <h1>Start from here</h1>
-   </div>
+    <div class="container" style="text-align: center">
+              <h2 > Balance Sheet</h2>
+              <p>Date: <input type="date" name=""> To <input type="date" name=""></p>
+    </div>
+        
+
+<div class="container">
+  <div class="row">
+  <div class="col-md-12">
+      <div id="curve_chart" style="width: 100%; height: 500px"></div>
+  </div>
+</div>
+</div>
+<div class="container">
+  <table cellpadding="15" align="center" border="1px">
+    <thead>
+      <th>Sl No.</th>
+      <th>Parts Name</th>
+      <th>No. of Unit Sold</th>
+      <th>Total Revenue</th>
+    </thead>
+    <tbody>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tbody>
+    
+  </table>
+
+</div>
 </div>
 </body>
+
 </html>

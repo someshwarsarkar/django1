@@ -16,6 +16,7 @@ import hello.views
 
 urlpatterns = [
     path("", hello.views.index, name="index"),
+    path("stock/", hello.views.stock, name="stock"),
     path("login/", hello.views.login, name="login"),
     path("import_product/", hello.views.p_import, name="p_import"),
     path("add_product/", hello.views.add_product, name="add_product"),
