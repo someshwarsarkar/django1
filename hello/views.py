@@ -18,7 +18,30 @@ def add_pdt_hid(request):
     pdt_name=request.POST.get("pdt_name")
     pdt_buyingprice=request.POST.get("pdt_buyingprice")
     pdt_sellingprice=request.POST.get("pdt_sellingprice")
-    return render(request, "add_product.html",{"pdt_barcode":pdt_barcode, "pdt_name":pdt_name, "pdt_buyingprice":pdt_buyingprice, "pdt_sellingprice":pdt_sellingprice})
+    return render(request, "add_pdt_hid.html",{"pdt_barcode":pdt_barcode, "pdt_name":pdt_name, "pdt_buyingprice":pdt_buyingprice, "pdt_sellingprice":pdt_sellingprice})
+
+
+def add_war_hid(request):
+    war_name=request.POST.get("war_name")
+    war_owner_name=request.POST.get("war_owner_name")
+    branch_code=request.POST.get("branch_code")
+    war_email=request.POST.get("war_email")
+    war_address=request.POST.get("war_address")
+    war_phone=request.POST.get("war_phone")
+    
+    return render(request, "add_war_hid.html",{"war_name":war_name,"war_owner_name":war_owner_name,"branch_code":branch_code,"war_email":war_email,"war_address":war_address,"war_phone":war_phone})
+def add_cat_hid(request):
+    cat_name=request.POST.get("cat_name")
+    cat_gst=request.POST.get("cat_gst")
+    
+    
+    return render(request, "add_cat_hid.html",{"cat_name":cat_name,"cat_gst":cat_gst})
+def invoice_hid(request):
+    
+    
+    return render(request, "invoice_hid.html",{}) 
+
+
 def manage_product(request):
     return render(request, "manage_product.html")
 def add_category(request):
