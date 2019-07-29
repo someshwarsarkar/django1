@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 from .models import Greeting
+from .models import Product
 
 # Create your views here.
 def index(request):
@@ -14,11 +15,14 @@ def p_import(request):
 def add_product(request):
     return render(request, "add_product.html")
 def add_pdt_hid(request):
-    pdt_barcode=request.POST.get("pdt_barcode")
     pdt_name=request.POST.get("pdt_name")
-    pdt_buyingprice=request.POST.get("pdt_buyingprice")
-    pdt_sellingprice=request.POST.get("pdt_sellingprice")
-    return render(request, "add_pdt_hid.html",{"pdt_barcode":pdt_barcode, "pdt_name":pdt_name, "pdt_buyingprice":pdt_buyingprice, "pdt_sellingprice":pdt_sellingprice})
+    pdt_price=request.POST.get("pdt_price")
+    pdt_category=request.POST.get("pdt_category")
+    pobj=Product()
+    pobj.pdt_name=pdt_name
+    pobj.price=pdt_price
+    pobj.pdt_category=pdt_category
+    return render(request, "add_pdt_hid.html",{"pdt_name":pdt_name, "pdt_price":pdt_price, "pdt_category":pdt_category})
 
 
 def add_war_hid(request):
