@@ -20,6 +20,7 @@ urlpatterns = [
     path("login/", hello.views.login, name="login"),
     path("import_product/", hello.views.p_import, name="p_import"),
     path("add_product/", hello.views.add_product, name="add_product"),
+    path("add_pdt_hid/", hello.views.add_pdt_hid, name="add_pdt_hid"),
     path("manage_product/", hello.views.manage_product, name="manage_product"),
 	path("add_category/", hello.views.add_category, name="add_category"),
 	path("manage_category/", hello.views.manage_category, name="manage_category"),
