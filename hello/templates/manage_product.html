@@ -25,25 +25,20 @@
                   <tr>
                      <th>SL no.</th>
                      <th>Product Name</th>
-                     <th>Bar Code</th>
-                     <th>Buying price</th>
-                     <th>Selling Price</th>
-                     <th>Category</th>
+                     <th>price</th>
                      <th>Edit</th>
                      <th>Delete</th>
                   </tr>
             </thead>
             <tbody>
+              {% for p in pdt %}
                   <tr>
-                     <th></th>
-                     <th></th>
-                     <th></th>
-                     <th></th>
-                     <th></th>
-                     <th></th>
-                     <th></th>
-                     <th></th>
+                     <td></td>
+                     <td>{{pdt_name}}</td>
+                     <td>{{pdt_price}}</td>
+                     <td>{{pdt_category}}</td>
                   </tr>
+              {% endfor %}
             </tbody>
    </div>
 </div>

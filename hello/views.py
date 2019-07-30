@@ -14,17 +14,25 @@ def p_import(request):
     return render(request, "import.html")
 def add_product(request):
     return render(request, "add_product.html")
+def add_pdt_hid(request):
+    pdt_name=request.POST.get("pdt_name")
+    pdt_price=request.POST.get("pdt_price")
+    pdt_cat=request.POST.get("pdt_cat")
+    obj=Product()
+    obj.pdt_name=pdt_name
+    obj.pdt_price=pdt_price
+    obj.pdt_cat=pdt_cat
+    obj.save()
+    return render(request, "add_pdt_hid.html",{"pdt_name":pdt_name, "pdt_price":pdt_price, "pdt_cat":pdt_cat})
 def manage_product(request):
-    return render(request, "manage_product.html")
+    pdt=Product.objects.all()
+    return render(request, "manage_product.html",{'pdt':pdt})
 def add_category(request):
     return render(request, "add_category.html")
 def manage_category(request):
     return render(request, "manage_category.html")
 def add_warehouse(request):
     return render(request, "add_warehouse.html")
-def list(request):
-    pdt=Product.objects.all()
-    return render(request, "list.html",{'pdt':pdt})
 def manage_warehouse(request):
     return render(request, "manage_warehouse.html")
 def export(request):
@@ -43,16 +51,8 @@ def sidebar(request):
     return render(request, "sidebar.html")
 def stock(request):
     return render(request, "stock.html")
-def add_pdt_hid(request):
-    pdt_name=request.POST.get("pdt_name")
-    pdt_price=request.POST.get("pdt_price")
-    pdt_cat=request.POST.get("pdt_cat")
-    obj=Product()
-    obj.pdt_name=pdt_name
-    obj.pdt_price=pdt_price
-    obj.pdt_cat=pdt_cat
-    obj.save()
-    return render(request, "add_pdt_hid.html",{"pdt_name":pdt_name, "pdt_price":pdt_price, "pdt_cat":pdt_cat})
+def list(request):
+    return render(request, "list.html")
 def db(request):
 
     greeting = Greeting()
