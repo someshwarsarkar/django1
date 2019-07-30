@@ -22,9 +22,11 @@ def add_pdt_hid(request):
     pobj.pdt_name=pdt_name
     pobj.price=pdt_price
     pobj.pdt_category=pdt_category
+    pobj.save()
     return render(request, "add_pdt_hid.html",{"pdt_name":pdt_name, "pdt_price":pdt_price, "pdt_category":pdt_category})
-
-
+def plist(request):
+    pdt=Product.objects.all()
+    return render(request, "plist.html", {"pdt":pdt})
 def add_war_hid(request):
     war_name=request.POST.get("war_name")
     war_owner_name=request.POST.get("war_owner_name")
