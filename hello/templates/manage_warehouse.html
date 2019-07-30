@@ -20,42 +20,34 @@
    </div>
    <div>
       <h2 align="center" style="color: #8600b3;">Manage Warehouse</h2>
-<table cellpadding="10" cellspacing="0" border="1" align="center">
-    <thead>
-        <tr>
-          <th><p>Sl No.</p></th>
-      <th><p>Ware House Name</p></th>
-   
-      <th><p>Owner Name</p></th>
-    
-       <th><p>Branch code</p></th>
-    
-       <th><p>Email</p></th>
-   
-       <th><p>Address</p></th>
-    
-       <th><p>phone number</p></th>
-       </tr>
-    
-    </thead>
-
-    <tbody>
-        <tr>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-            <th></th>
-
-        </tr>
-
-    </tbody>
-    
-
-
-</table>
+<table class="table table-striped"align="center">
+            <thead>
+                  <tr>
+                     <th>SL no.</th>
+                     <th>Warehouse Name</th>
+                     <th>Owner's Name</th>
+                     <th>Email</th>
+                     <th>Address</th>
+                     <th>Phone</th>
+                     <th>Edit</th>
+                     <th>Delete</th>
+                  </tr>
+            </thead>
+            <tbody>
+              {% for w in war %}
+                  <tr>
+                     <td></td>
+                     <td>{{w.war_name}}</td>
+                     <td>{{w.war_owner_name}}</td>
+                     <td>{{w.war_email}}</td>
+                     <td>{{w.war_address}}</td>
+                     <td>{{w.war_phone}}</td>
+                     <td></td>
+                     <td></td>
+                  </tr>
+              {% endfor %}
+            </tbody>
+          </table>
    </div>
 </div>
 </body>

@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from .models import Greeting
 from .models import Product
 from .models import Category
+from .models import Warehouse
 
 # Create your views here.
 def index(request):
@@ -43,8 +44,23 @@ def manage_category(request):
     return render(request, "manage_category.html", {'cat':cat})
 def add_warehouse(request):
     return render(request, "add_warehouse.html")
+def add_war_hid(request):
+    war_name=request.POST.get("war_name")
+    cat_owner_name=request.POST.get("war_owner_name")
+    war_email=request.POST.get("war_email")
+    war_address=request.POST.get("war_address")
+    war_phone=request.POST.get("war_phone")
+    wobj=Warehouse()
+    wobj.war_name=war_name
+    wobj.war_owner_name=war_owner_name
+    wobj.war_email=war_email
+    wobj.war_address=war_address
+    wobj.war_phone=war_phone
+    wobj.save()
+    return render(request, "add_war_hid.html", {"war_name":war_name, "war_onwer_name":war_owner_name, "war_email":war_email, "war_address":war_address, "war_phone":war_phone})
 def manage_warehouse(request):
-    return render(request, "manage_warehouse.html")
+    war=Wraehouse.objects.all()
+    return render(request, "manage_warehouse.html",{'war':war})
 def export(request):
     return render(request, "export.html")
 def invoice(request):
