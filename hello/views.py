@@ -64,6 +64,7 @@ def manage_warehouse(request):
 def export(request):
     return render(request, "export.html")
 def invoice(request):
+    pdt=["a","b","c","d","e"]
     return render(request, "invoice.html")
 def report(request):
     return render(request, "report.html")
