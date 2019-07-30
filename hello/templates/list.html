@@ -18,16 +18,16 @@
     <thead>
       <tr>
         <th>Product Name</th>
-        <th>Price</th>
-        <th>Category</th>
+        <th>Buying Price</th>
+        <th>Product Category</th>
       </tr>
     </thead>
     <tbody>
       {% for p in pdt %}
       <tr>
-        <td>{{pdt_name}}</td>
-        <td>{{pdt_price}}</td>
-        <td>{{pdt_category}}</td>
+        <td>{{p.pdt_name}}</td>
+        <td>{{p.pdt_price}}</td>
+        <td>{{p.pdt_cat}}</td>
       </tr>
       {% endfor %}
     </tbody>

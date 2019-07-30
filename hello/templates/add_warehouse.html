@@ -3,7 +3,27 @@
 <html>
 <head>
     <title>CarGo</title>
-    {% include "hlink.html" %}
+    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+  <script type="text/javascript" src="{% static 'index.js' %}"></script>
+    <!-- Latest compiled and minified CSS -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+ 
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!--For Mobile View-->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--/Mobile View-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- pie chart file start here-->
+
+     <!--Add a reference to the Chart API at google.com:-->
+     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script> 
     
 <style type="text/css">
     .frm p input
@@ -27,20 +47,20 @@
    </div>
    <div>
     <h2 align="center" style="color: #8600b3;">Add Warehouse</h2>
-    <form align="center" class="frm" name="war_frm" action="add_war_hid.html" method="post">
+    <form align="center" class="frm">
       <p><h5>Warehouse Name</h5></p>
-    <p><input type="text" name="war_name" placeholder="Enter Warehouse Name" required=""></p>
+    <p><input type="text" name="w_name" placeholder="Enter Warehouse Name"></p>
        <p><h5>Owner Name</h5></p>
-    <p><input type="text" name="war_owner_name" placeholder="Enter Owner's Name" required=""></p>
+    <p><input type="text" name="owner_name" placeholder="Enter Owner Name"></p>
        <p><h5>Branch code</h5></p>
-    <p><input type="number" name="branch_code" placeholder="Branch Code"></p>
+    <p><input type="number" name="branch_code" placeholder="QR Code"></p>
        <p><h5>Email</h5></p>
-    <p><input type="email" name="war_email" placeholder="Enter Email" required=""></p>
+    <p><input type="email" name="w_email" placeholder="Enter Email"></p>
        <p><h5>Address</h5></p>
-    <p><input type="text" name="war_address" placeholder="Enter Address" required=""></p>
+    <p><input type="text" name="w_address" placeholder="Enter Address"></p>
        <p><h5>Phone number</h5></p>
-    <p><input type="number" name="war_phone" placeholder="Enter Phone Number" required=""></p>
-   <p><button class="btn btn-primary">ADD</button>
+    <p><input type="number" name="w_phone" placeholder="Enter Phone Number"></p>
+   <p><button class="btn btn-primary">Add</button>
   </form>
    </div>
 </div>
