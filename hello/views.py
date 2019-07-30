@@ -40,7 +40,7 @@ def add_cat_hid(request):
     return render(request, "add_cat_hid.html", {"cat_name":cat_name, "cat_gst":cat_gst})
 def manage_category(request):
     cat=Category.objects.all()
-    return render(request, "manage_category.html")
+    return render(request, "manage_category.html", {'cat':cat})
 def add_warehouse(request):
     return render(request, "add_warehouse.html")
 def manage_warehouse(request):
