@@ -1,22 +1,30 @@
-/* Set the width of the sidebar to 250px and the left margin of the page content to 250px */
-function openNav() {
-  document.getElementById("mySidebar").style.width = "250px";
-  document.getElementById("main").style.marginLeft = "250px";
+
+window.onload=function(){
+
+var sidebar = document.getElementById("mySidebar")
+var btn = document.getElementById("doom")
+var main = document.getElementById("main")
+
+btn.addEventListener("click",fur);
+
+
+function fur() {
+  
+  if(sidebar.style.width == "0px"){
+
+    sidebar.style.width = "250px";
+    main.style.marginLeft = "250px";
+
+  }
+   
+  else {
+  
+  sidebar.style.width = "0px";
+  main.style.marginLeft = "0px";
+  
+}
+}
 }
 
-/* Set the width of the sidebar to 0 and the left margin of the page content to 0 */
-function closeNav() {
-  document.getElementById("mySidebar").style.width = "0";
-  document.getElementById("main").style.marginLeft = "0";
-}
-/* When the user scrolls down, hide the navbar. When the user scrolls up, show the navbar 
-var prevScrollpos = window.pageYOffset;
-window.onscroll = function() {
-  var currentScrollPos = window.pageYOffset;
-  if (prevScrollpos > currentScrollPos) {
-    document.getElementById("navbar").style.top = "0";
-  } else {
-    document.getElementById("navbar").style.top = "-50px";
-  }
-  prevScrollpos = currentScrollPos;
-}*/
+
+
