@@ -26,6 +26,7 @@ urlpatterns = [
 	path("add_cat_hid/", hello.views.add_cat_hid, name="add_cat_hid"),
 	path("manage_category/", hello.views.manage_category, name="manage_category"),
 	path("add_warehouse/", hello.views.add_warehouse, name="add_warehouse"),
+	path("add_war_hid/", hello.views.add_war_hid, name="add_war_hid"),
 	path("manage_warehouse/", hello.views.manage_warehouse, name="manage_warehouse"),
 	path("export_product/", hello.views.export, name="export"),
 	path("invoice/", hello.views.invoice, name="invoice"),
