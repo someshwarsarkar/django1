@@ -59,7 +59,7 @@ def add_war_hid(request):
     wobj.save()
     return render(request, "add_war_hid.html", {"war_name":war_name, "war_onwer_name":war_owner_name, "war_email":war_email, "war_address":war_address, "war_phone":war_phone})
 def manage_warehouse(request):
-    war=Wraehouse.objects.all()
+    war=Warehouse.objects.all()
     return render(request, "manage_warehouse.html",{'war':war})
 def export(request):
     return render(request, "export.html")
