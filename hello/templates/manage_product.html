@@ -34,9 +34,10 @@
               {% for p in pdt %}
                   <tr>
                      <td></td>
-                     <td>{{pdt_name}}</td>
-                     <td>{{pdt_price}}</td>
-                     <td>{{pdt_category}}</td>
+                     <td>{{p.pdt_name}}</td>
+                     <td>{{p.pdt_price}}</td>
+                     <td>{{p.pdt_category}}</td>
+                     <td></td>
                   </tr>
               {% endfor %}
             </tbody>
