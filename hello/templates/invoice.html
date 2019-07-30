@@ -88,10 +88,12 @@ tr:nth-child(even) {
     <tr>
       <td></td>
       <td><select name="pname">--Select--
-        {% for i in views.invoice.pdt %}
+        {% pdt=["a","b","c","d","e"] %}
+        {% for i in pdt %}
             <option value="{{i}}"></option>
             {% endfor %}
           </select></td>
+        }
       <td><input type="number" min="1" name="iqty" required=""></td>
       <td><input type="number" min="1000" name="unitprice" required=""></td>
     </tr>
