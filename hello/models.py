@@ -8,3 +8,6 @@ class Product(models.Model):
 	pdt_name=models.TextField()
 	pdt_price=models.TextField()
 	pdt_cat=models.TextField()
+class Category(models.Model):
+	cat_name=models.TextField()
+	cat_gst=models.TextField()
