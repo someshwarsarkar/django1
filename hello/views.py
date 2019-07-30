@@ -3,6 +3,7 @@ from django.http import HttpResponse
 
 from .models import Greeting
 from .models import Product
+from .models import Category
 
 # Create your views here.
 def index(request):
@@ -29,7 +30,16 @@ def manage_product(request):
     return render(request, "manage_product.html",{'pdt':pdt})
 def add_category(request):
     return render(request, "add_category.html")
+def add_cat_hid(request):
+    cat_name=request.POST.get("cat_name")
+    cat_gst=request.POST.get("cat_gst")
+    cobj=Category()
+    cobj.cat_name=cat_name
+    cobj.cat_gst=cat_gst
+    cobj.save()
+    return render(request, "add_cat_hid.html", {"cat_name":cat_name, "cat_gst":cat_gst})
 def manage_category(request):
+    cat=Category.objects.all()
     return render(request, "manage_category.html")
 def add_warehouse(request):
     return render(request, "add_warehouse.html")
