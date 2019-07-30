@@ -46,7 +46,7 @@ def add_warehouse(request):
     return render(request, "add_warehouse.html")
 def add_war_hid(request):
     war_name=request.POST.get("war_name")
-    cat_owner_name=request.POST.get("war_owner_name")
+    war_owner_name=request.POST.get("war_owner_name")
     war_email=request.POST.get("war_email")
     war_address=request.POST.get("war_address")
     war_phone=request.POST.get("war_phone")
