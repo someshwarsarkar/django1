@@ -80,7 +80,8 @@ def stock(request):
 def list(request):
     return render(request, "list.html")
 def delete(request):
-    return render(request, "delete.html")
+    d_id=request.POST.get("d_id")
+    return render(request, "delete.html", {"d_id":d_id})
 def db(request):
 
     greeting = Greeting()
