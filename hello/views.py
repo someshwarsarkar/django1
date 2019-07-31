@@ -83,6 +83,8 @@ def delete(request):
     d_id=request.POST.get("d_id")
     pdel=Product.objects.filter(id=d_id).delete()
     return render(request, "delete.html", {"d_id":d_id})
+def print(request):
+    return render(request, "print.html")
 def db(request):
 
     greeting = Greeting()
