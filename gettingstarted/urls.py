@@ -33,6 +33,7 @@ urlpatterns = [
 	path("report/", hello.views.report, name="report"),
 	path("contact_us/", hello.views.contact_us, name="contact_us"),
 	path("list/", hello.views.list, name="list"),
+	path("delete/", hello.views.delete, name="delete"),
     path("db/", hello.views.db, name="db"),
     path("admin/", admin.site.urls),
 ]

@@ -79,6 +79,8 @@ def stock(request):
     return render(request, "stock.html")
 def list(request):
     return render(request, "list.html")
+def delete(request):
+    return render(request, "delete.html")
 def db(request):
 
     greeting = Greeting()
