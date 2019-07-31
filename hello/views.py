@@ -81,7 +81,7 @@ def list(request):
     return render(request, "list.html")
 def delete(request):
     d_id=request.POST.get("d_id")
-    pdel=Product.objects.filter(id="+d_id").delete()
+    pdel=Product.objects.filter("id="+d_id).delete()
     return render(request, "delete.html", {"d_id":d_id})
 def db(request):
 
