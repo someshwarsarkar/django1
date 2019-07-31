@@ -37,8 +37,13 @@
                      <td></td>
                      <td>{{p.pdt_name}}</td>
                      <td>{{p.pdt_price}}</td>
-                     <td>{{p.pdt_category}}</td>
                      <td></td>
+                     <td>
+                       <form action="/delete/" method="post">
+                        <input type="hidden" name="{{id}}">
+                        <input type="submit" value="DELETE" class="btn btn-danger">
+                      </form>
+                     </td>
                   </tr>
               {% endfor %}
             </tbody>
