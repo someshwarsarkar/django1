@@ -89,7 +89,7 @@ tr:nth-child(even) {
       <td></td>
       <td><select name="pname">--Select--
         
-        {% for i in c %}
+        {% for i in pname %}
             <option value="{{i}}">{{i}}</option>
             {% endfor %}
           </select></td>
@@ -116,7 +116,6 @@ tr:nth-child(even) {
       <p><input type="number" name="discount" placeholder="%"></p>
       <p><button type="submit" class="btn btn-success">SUBMIT</button></p>
     </form>
-
   </div>
 
      

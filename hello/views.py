@@ -15,7 +15,7 @@ def login(request):
 def p_import(request):
     return render(request, "import.html")
 def add_product(request):
-    return render(request, "add_product.html")
+    return render(request, "add_product.html", {pdt_cat:["Auto Electrical Parts","Nuts and Bolts","Transmission Parts","Brake Parts","Rubber Components"]})
 def add_pdt_hid(request):
     pdt_name=request.POST.get("pdt_name")
     pdt_price=request.POST.get("pdt_price")
@@ -64,7 +64,7 @@ def manage_warehouse(request):
 def export(request):
     return render(request, "export.html")
 def invoice(request):
-    return render(request, "invoice.html", {"c":["a","b","c","d","e"]})
+    return render(request, "invoice.html", {"pname":["Starters","Armatures","Commutators","Field Coils","Starter Bendix Drives","Alternators","Rotors","Stators","Housings","Flash Relays","Carbon Brushes","Hub Bolts","T-Bolts","Washers","Nuts","U-Bolts","Ball Joins"]})
 def report(request):
     return render(request, "report.html")
 def contact_us(request):
