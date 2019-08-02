@@ -6,7 +6,7 @@
     {% include "hlink.html" %}
     
 <style type="text/css">
-    .frm p input,select option
+    .frm p input,select
     {
       width: 250px;
       border-radius: 2px;
@@ -34,7 +34,7 @@
       <p><input type="number" name="pdt_price" placeholder="Enter Price in Rs"  required=""></p>
       
       <p><h4>Category</h4></p>
-      <p><select name="pdt_cat" class="dropdown-toggle frm">
+      <p><select name="pdt_cat" class="dropdown-toggle">
         <option>--Select--</option>
         {% for i in pdt_cat %}
             <option value="{{i}}">{{i}}</option>
