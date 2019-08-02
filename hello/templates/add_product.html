@@ -34,10 +34,10 @@
       <p><input type="number" name="pdt_price" placeholder="Enter Price in Rs"  required=""></p>
       
       <p><h4>Category</h4></p>
-      <p><select name="pdt_cat" class="dropdown-toggle">
-        <option class="frm">--Select--</option>
+      <p><select name="pdt_cat" class="dropdown-toggle frm">
+        <option>--Select--</option>
         {% for i in pdt_cat %}
-            <option value="{{i}}" class="frm">{{i}}</option>
+            <option value="{{i}}">{{i}}</option>
             {% endfor %}
       </select></p>
       <p><button class="btn btn-primary">Add</button>
