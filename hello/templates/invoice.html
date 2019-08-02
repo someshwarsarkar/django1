@@ -78,7 +78,6 @@ tr:nth-child(even) {
 <table cellspacing="0">
   <thead>
   <tr>
-    <th><p>SL no.</p></th>
     <th>Product name</th>
     <th>Qty</th>
     <th>Unit Price</th>
@@ -86,9 +85,8 @@ tr:nth-child(even) {
   </thead>
   <tbody>
     <tr>
-      <td></td>
-      <td><select name="pname">--Select--
-        
+      <td><select name="pname">
+        <option>--Select--</option>
         {% for i in pname %}
             <option value="{{i}}">{{i}}</option>
             {% endfor %}
@@ -111,7 +109,7 @@ tr:nth-child(even) {
       <p>Coustomer number</p>
       <p><input type="number" minlength="5" maxlength="13" name="cnumber" placeholder="Enter Number"></p>
       <p>GST</p>
-      <p><input type="number" name="gst" placeholder="%"></p>
+      <p><input type="hidden" name="gst" placeholder="%"></p>
       <p>Discount</p>
       <p><input type="number" name="discount" placeholder="%"></p>
       <p><button type="submit" class="btn btn-success">SUBMIT</button></p>
