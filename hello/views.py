@@ -16,7 +16,7 @@ def p_import(request):
     return render(request, "import.html")
 def add_product(request):
     cobj=Category()
-    cobj.pdt_cat[]=cat_name
+    cobj.pdt_cat=cat_name
     cobj.save()
     return render(request, "add_product.html",{"pdt_cat":cat_name})
 def add_pdt_hid(request):
