@@ -30,6 +30,7 @@ urlpatterns = [
 	path("manage_warehouse/", hello.views.manage_warehouse, name="manage_warehouse"),
 	path("export_product/", hello.views.export, name="export"),
 	path("invoice/", hello.views.invoice, name="invoice"),
+	path("invoice_hid/", hello.views.invoice_hid, name="invoice_hid"),
 	path("report/", hello.views.report, name="report"),
 	path("contact_us/", hello.views.contact_us, name="contact_us"),
 	path("list/", hello.views.list, name="list"),

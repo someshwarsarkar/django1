@@ -5,6 +5,7 @@ from .models import Greeting
 from .models import Product
 from .models import Category
 from .models import Warehouse
+from .models import Invoice
 
 # Create your views here.
 def index(request):
@@ -64,10 +65,26 @@ def manage_warehouse(request):
     war=Warehouse.objects.all()
     return render(request, "manage_warehouse.html",{'war':war})
 def export(request):
-    return render(request, "export.html")
+    inv=Invoice.objects.all()
+    return render(request, "export.html", {'inv':inv})
 def invoice(request):
     p=Product.objects.all()
     return render(request, "invoice.html", {'p':p})
+def invoice_hid(request):
+    pname=request.POST.get("pname")
+    qty=request.POST.get("qty")
+    unitprice=request.POST.get("unitprice")
+    cname=request.POST.get("cname")
+    cnumber=request.POST.get("cnumber")
+    dis=request.POST.get("dis")
+    iobj=Invoice()
+    iobj.pname=pname
+    iobj.qty=qty
+    iobj.unitprice=unitprice
+    iobj.cname=cname
+    iobj.cnumber=cnumber
+    iobj.dis=dis
+    return render(request, "invoice.html", {"pname":pname, "qty":qty, "unitprice":unitprice, "cname":cname,"dis":dis})
 def report(request):
     return render(request, "report.html")
 def contact_us(request):

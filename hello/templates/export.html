@@ -29,23 +29,25 @@
                      <th>Product Name</th>
                      <th>Unit Price</th>
                      <th>Qty</th>
+                     <th>GST</th>
                      <th>Discount</th>
                      <th>Print</th>
                   </tr>
             </thead>
             <tbody>
-              
+              {% for i in inv %}
                   <tr>
-                     <td></td>
-                     <td></td>
-                     <td></td>
-                     <td></td>
-                     <td></td>
-                     <td></td>
-                     <td></td>
-                     <td></td>
+                     <td>{{i.id}}</td>
+                     <td>{{i.cname}}</td>
+                     <td>{{i.cnumber}}</td>
+                     <td>{{i.pname}}</td>
+                     <td>{{i.unitprice}}</td>
+                     <td>{{i.qty}}</td>
+                     <td>{{i.gst}}</td>
+                     <td>{{i.dis}}</td>
+                     <td><p class="btn btn-primary">PRINT</p></td>
                   </tr>
-             
+              {% endfor %}
             </tbody>
           </table>
    </div>
