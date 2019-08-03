@@ -13,7 +13,8 @@ def index(request):
 def login(request):
     return render(request, "login.html")
 def p_import(request):
-    return render(request, "import.html")
+    pname=Product.objects.all()
+    return render(request, "import.html", {'pname':pname})
 def add_product(request):
     p=Category.objects.all()
     return render(request, "add_product.html",{'p':p})
