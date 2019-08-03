@@ -15,7 +15,10 @@ def login(request):
 def p_import(request):
     return render(request, "import.html")
 def add_product(request):
-    return render(request, "add_product.html", {"pdt_cat":["Auto Electrical Parts","Nuts and Bolts","Transmission Parts","Brake Parts","Rubber Components"]})
+    cobj=Category()
+    cobj.pdt_cat[]=cat_name
+    cobj.save()
+    return render(request, "add_product.html",{"pdt_cat":cat_name})
 def add_pdt_hid(request):
     pdt_name=request.POST.get("pdt_name")
     pdt_price=request.POST.get("pdt_price")
