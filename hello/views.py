@@ -65,7 +65,8 @@ def manage_warehouse(request):
 def export(request):
     return render(request, "export.html")
 def invoice(request):
-    return render(request, "invoice.html")
+    p=Product.objects.all()
+    return render(request, "invoice.html", {'p':p})
 def report(request):
     return render(request, "report.html")
 def contact_us(request):
