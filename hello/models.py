@@ -17,3 +17,12 @@ class Warehouse(models.Model):
 	war_email=models.TextField()
 	war_address=models.TextField()
 	war_phone=models.TextField()
+class Invoice(models.Model):
+	pname=models.TextField()
+	qty=models.TextField()
+	unitprice=models.TextField()
+	cname=models.TextField()
+	cnumber=models.TextField()
+	gst=models.TextField()
+	dis=models.TextField()
+	total=models.TextField()
