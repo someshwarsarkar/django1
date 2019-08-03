@@ -65,7 +65,7 @@ def manage_warehouse(request):
 def export(request):
     return render(request, "export.html")
 def invoice(request):
-    return render(request, "invoice.html", {"pname":["Starters","Armatures","Commutators","Field Coils","Starter Bendix Drives","Alternators","Rotors","Stators","Housings","Flash Relays","Carbon Brushes","Hub Bolts","T-Bolts","Washers","Nuts","U-Bolts","Ball Joins"]})
+    return render(request, "invoice.html")
 def report(request):
     return render(request, "report.html")
 def contact_us(request):
