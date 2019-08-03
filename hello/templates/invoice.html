@@ -88,7 +88,7 @@ tr:nth-child(even) {
       <td><select name="pname">
         <option>--Select--</option>
         {% for i in p %}
-            <option value="{{i}}">{{i}}</option>
+            <option value="{{i.pdt_name}}">{{i.pdt_name}}</option>
             {% endfor %}
           </select></td>
       <td><input type="number" min="1" name="iqty" required=""></td>
