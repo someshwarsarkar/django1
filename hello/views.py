@@ -84,6 +84,10 @@ def delete(request):
     d_id=request.POST.get("d_id")
     pdel=Product.objects.filter(id=d_id).delete()
     return render(request, "delete.html", {"d_id":d_id})
+def cat_delete(request):
+    c_id=requestPOST.get("c_id")
+    cdel=Category.objects.filter(id=c_id).delete()
+    return render(request, "cat_delete.html", {"c_id":c_id})
 def print(request):
     return render(request, "print.html")
 def db(request):

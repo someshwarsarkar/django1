@@ -37,8 +37,10 @@
                      <td></td>
                      <td>{{c.cat_name}}</td>
                      <td>{{c.cat_gst}}</td>
-                     <td><a href="#"><span class="glyphicon glyphicon-pencil"></span></a></td>
-                     <td><span class="glyphicon glyphicon-remove"></span></td>
+                     <td></td>
+                     <td><input type="hidden" name="c_id" value="{{c.id}}">
+                        <input type="submit" value="DELETE" onclick="return confirm('Are you sure?')" class="btn btn-danger">
+                    </td>
                   </tr>
               {% endfor %}
             </tbody>

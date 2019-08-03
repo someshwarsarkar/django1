@@ -34,6 +34,7 @@ urlpatterns = [
 	path("contact_us/", hello.views.contact_us, name="contact_us"),
 	path("list/", hello.views.list, name="list"),
 	path("delete/", hello.views.delete, name="delete"),
+	path("cat_delete/", hello.views.cat_delete, name="cat_delete"),
 	path("print/", hello.views.print, name="print"),
     path("db/", hello.views.db, name="db"),
     path("admin/", admin.site.urls),
