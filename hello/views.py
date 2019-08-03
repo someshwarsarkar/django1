@@ -15,7 +15,7 @@ def login(request):
 def p_import(request):
     return render(request, "import.html")
 def add_product(request):
-    p=Category.objects.cat_name()
+    p=Category.objects.all()
     return render(request, "add_product.html",{'p':p})
 def add_pdt_hid(request):
     pdt_name=request.POST.get("pdt_name")

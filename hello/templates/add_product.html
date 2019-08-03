@@ -37,7 +37,7 @@
       <p><select name="pdt_cat" class="dropdown-toggle">
         <option>--Select--</option>
         {% for i in p %}
-            <option value="{{i}}">{{i}}</option>
+            <option value="{{i.cat_name}}">{{i.cat_name}}</option>
             {% endfor %}
       </select></p>
       <p><button class="btn btn-primary">Add</button>
