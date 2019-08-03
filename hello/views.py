@@ -110,8 +110,9 @@ def cat_delete(request):
     return render(request, "cat_delete.html", {"c_id":c_id})
 def print(request):
     i_id=request.POST.get("i_id")
-    psel=Invoice.objects.filter(id=i_id)
-    return render(request, "print.html",{"i_id":i_id,"pname":pname})
+    #psel=Invoice.objects.filter(id=i_id)
+    inv=Invoice.objects.filter(id=i_id.values('id'))
+    return render(request, "print.html",{"inv":inv})
 def db(request):
 
     greeting = Greeting()
