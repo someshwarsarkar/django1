@@ -84,7 +84,8 @@ def invoice_hid(request):
     iobj.cname=cname
     iobj.cnumber=cnumber
     iobj.dis=dis
-    return render(request, "invoice.html", {"pname":pname, "qty":qty, "unitprice":unitprice, "cname":cname,"dis":dis})
+    iobj.save()
+    return render(request, "invoice_hid.html", {"pname":pname, "qty":qty, "unitprice":unitprice, "cname":cname,"dis":dis})
 def report(request):
     return render(request, "report.html")
 def contact_us(request):
