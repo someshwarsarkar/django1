@@ -71,6 +71,7 @@ tr:nth-child(even) {
 <table cellspacing="0">
   <thead>
   <tr>
+    <th>Invoice ID</th>
     <th>Product name</th>
     <th>Qty</th>
     <th>Unit Price</th>
@@ -78,9 +79,10 @@ tr:nth-child(even) {
   </thead>
   <tbody>
     <tr>
-      <td></td>
-      <td></td>
-      <td></td>
+      <td>{{psel.id))</td>
+      <td>{{psel.pname}}</td>
+      <td>{{psel.qty}}</td>
+      <td>{{psel.unitprice}}</td>
     </tr>
   </tbody>
 </table>
@@ -93,13 +95,13 @@ tr:nth-child(even) {
     
   <div  id="f">
       <p>Coustomer Name</p>
-      <p></p>
+      <p>{{psel.cname}}</p>
       <p>Coustomer number</p>
-      <p></p>
+      <p>{{psel.cname}}</p>
       <p>GST</p>
-      <p></p>
+      <p>{{psel.gst}}</p>
       <p>Discount</p>
-      <p></p>
+      <p>{{psel..dis}}</p>
     
   </div>
 
@@ -113,7 +115,7 @@ tr:nth-child(even) {
 
 </body>
 <script type="text/javascript">
-  window.print()
+  //window.print()
 </script>
 </html>
 

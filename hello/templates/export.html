@@ -47,7 +47,11 @@
                      <td>{{i.gst}}</td>
                      <td>{{i.dis}}</td>
                      <td>{{i.total}}</td>
-                     <td><p class="btn btn-primary">PRINT</p></td>
+                     <td>
+                       <form action="/print/" method="post">
+                        <input type="hidden" name="i_id" value="{{i.id}}">
+                        <input type="submit" class="btn btn-primary" value="PRINT">
+                     </td>
                   </tr>
               {% endfor %}
             </tbody>
