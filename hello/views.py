@@ -112,7 +112,8 @@ def print(request):
     i_id=request.POST.get("i_id")
     #psel=Invoice.objects.filter(id=i_id)
     inv=Invoice.objects.filter(id=i_id)
-    return render(request, "print.html",{"inv":inv})
+    in=Invoice.objects.values(id=i_id)
+    return render(request, "print.html",{"in":in})
 def db(request):
 
     greeting = Greeting()
