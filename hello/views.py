@@ -116,6 +116,8 @@ def lc(request):
     username=request.POST.get("username")
     password=request.POST.get("password")
     return render(request, "lc.html", {"username":username, "password":password})
+def logout(request):
+    return render(request, "logout.html")
 def db(request):
 
     greeting = Greeting()
