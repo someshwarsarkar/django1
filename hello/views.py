@@ -96,6 +96,7 @@ def print(request):
     for i in pd:
         if (i[k]["id"]==15):
             cname=i[k]["pdt_name"]
+            break
         k=k+1
     return render(request, "print.html",{"i_id":i_id, "cname":cname})
 def lc(request):
