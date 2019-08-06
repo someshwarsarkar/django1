@@ -91,7 +91,8 @@ def cat_delete(request):
 def print(request):
     i_id=request.POST.get("i_id")
     psel=Invoice.objects.filter(id=i_id)
-    return render(request, "print.html",{"i_id":i_id})
+    cname=psel.get("cname")
+    return render(request, "print.html",{"i_id":i_id, "cname":cname})
 def lc(request):
     username=request.POST.get("username")
     password=request.POST.get("password")
