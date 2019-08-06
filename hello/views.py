@@ -91,11 +91,11 @@ def cat_delete(request):
 def print(request):
     i_id=request.POST.get("i_id")
     psel=Invoice.objects.filter(id=i_id)
-    pd=Invoice.objects.all()
+    pd=Product.objects.all()
     k=0
     for i in pd:
-        if (i[k]["id"]==i_id):
-            cname=i[k]["cname"]
+        if (i[k]["id"]==15):
+            cname=i[k]["pdt_name"]
         k=k+1
     return render(request, "print.html",{"i_id":i_id, "cname":cname})
 def lc(request):
