@@ -113,7 +113,9 @@ def print(request):
     psel=Invoice.objects.filter(id=i_id)
     return render(request, "print.html",{"i_id":i_id})
 def lc(request):
-    return render(request, "lc.html")
+    username=request.POST.get("username")
+    password=request.POST.get("password")
+    return render(request, "lc.html", {"username":username, "password":password})
 def db(request):
 
     greeting = Greeting()
