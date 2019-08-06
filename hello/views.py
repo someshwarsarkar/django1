@@ -90,7 +90,7 @@ def cat_delete(request):
     return render(request, "cat_delete.html", {"c_id":c_id})
 def print(request):
     i_id=request.POST.get("i_id")
-    psel=Invoice.objects.get(filter(id=i_id))
+    psel=Invoice.objects.get.filter(id=i_id)
     cname=psel["cname"]
     return render(request, "print.html",{"i_id":i_id, "cname":cname})
 def lc(request):
