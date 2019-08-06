@@ -91,7 +91,7 @@ def cat_delete(request):
 def print(request):
     i_id=request.POST.get("i_id")
     psel=Invoice.objects.filter(id=i_id)
-    pd=Invoice()
+    pd=Invoice.objects.all()
     for i in pd:
         if (pd.id==i_id):
             cname=pd.cname
