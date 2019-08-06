@@ -11,12 +11,6 @@ class Product(models.Model):
 class Category(models.Model):
 	cat_name=models.TextField()
 	cat_gst=models.TextField()
-class Warehouse(models.Model):
-	war_name=models.TextField()
-	war_owner_name=models.TextField()
-	war_email=models.TextField()
-	war_address=models.TextField()
-	war_phone=models.TextField()
 class Invoice(models.Model):
 	pname=models.TextField()
 	qty=models.TextField()
