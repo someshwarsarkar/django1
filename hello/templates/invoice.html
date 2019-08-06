@@ -5,7 +5,7 @@
 <head>
   <title>CarGo</title>
   {% include "hlink.html" %}
-<script type="text/javascript" src="{% static 'invoice.js'%}"></script>
+<!--script type="text/javascript" src="{% static 'invoice.js'%}"></script-->
 
 
 <style type="text/css">
@@ -77,14 +77,14 @@ tr:nth-child(even) {
 <table id="dataTable" cellspacing="0" border=1>
     <tr>
       <td><INPUT type="checkbox" name="chk"/></td>
-      <td><select name="pname[]">
+      <td><select name="pname">
         <option>--Select Product--</option>
         {% for i in p %}
             <option value="{{i.id}}">{{i.pdt_name}}</option>
             {% endfor %}
           </select></td>
-      <td><input type="number" min="1" name="qty[]" Placeholder="Quantity" required=""></td>
-      <td><input type="text" name="unitprice[]" placeholder="Unit Price" required=""></td>
+      <td><input type="number" min="1" name="qty" Placeholder="Quantity" required=""></td>
+      <td><input type="text" name="unitprice" placeholder="Unit Price" required=""></td>
     </tr>
 </table>
 <input type="submit" value="Calculate">
