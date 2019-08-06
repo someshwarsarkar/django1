@@ -5,7 +5,7 @@
 <head>
   <title>CarGo</title>
   {% include "hlink.html" %}
-
+<script type="text/javascript" src="{% static 'invoice.js'%}"></script>
 
 
 <style type="text/css">
@@ -69,31 +69,26 @@ tr:nth-child(even) {
             <div class="m" >
 
     
-    
+    <INPUT type="button" value="Add Row" onclick="addRow('dataTable')" />
+
+  <INPUT type="button" value="Delete Row" onclick="deleteRow('dataTable')" />
 
 <form action="/invoice_hid/" name="frm" method="post">
-<table cellspacing="0">
-  <thead>
-  <tr>
-    <th>Product name</th>
-    <th>Qty</th>
-    <th>Unit Price</th>
-  </tr>
-  </thead>
-  <tbody>
+<table id="dataTable" cellspacing="0" border=1>
     <tr>
-      <td><select name="pname">
-        <option>--Select--</option>
+      <td><INPUT type="checkbox" name="chk"/></td>
+      <td><select name="pname[]">
+        <option>--Select Product--</option>
         {% for i in p %}
-            <option value="{{i.pdt_name}}">{{i.pdt_name}}</option>
+            <option value="{{i.id}}">{{i.pdt_name}}</option>
             {% endfor %}
           </select></td>
-      <td><input type="number" min="1" name="qty" required=""></td>
-      <td><input type="number" min="1000" name="unitprice" required=""></td>
+      <td><input type="number" min="1" name="qty[]" Placeholder="Quantity" required=""></td>
+      <td><input type="text" name="unitprice[]" placeholder="Unit Price" required=""></td>
     </tr>
-  </tbody>
 </table>
-    
+<input type="submit" value="Calculate">
+</form>
     
   </div>
     
