@@ -94,8 +94,9 @@ def print(request):
     pd=Invoice.objects.all()
     k=0
     for i in pd:
-        if (pd.id==i_id):
-            cname=pd.cname
+        if (pd.id[k]==i_id):
+            cname=pd.cname[k]
+            k=k+1
             break
     return render(request, "print.html",{"i_id":i_id, "cname":cname})
 def lc(request):
