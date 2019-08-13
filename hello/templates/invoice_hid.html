@@ -1,4 +1,8 @@
 <script type="text/javascript">
+	if(localStorage.getItem("uid")=="null" || localStorage.getItem("uid")==null)
+	{
+		window.location=/login/;
+	}
   alert("Invoice creation completed, click on 'OK'");
   window.location='/export_product/';
 </script>
