@@ -10,14 +10,7 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.CreateModel(
-            name='Category',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('cat_name', models.TextField()),
-                ('cat_gst', models.TextField()),
-            ],
-        ),
+        
         migrations.CreateModel(
             name='Import',
             fields=[
