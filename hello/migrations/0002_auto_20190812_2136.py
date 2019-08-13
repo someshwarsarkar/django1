@@ -10,45 +10,6 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.CreateModel(
-            name='Category',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('cat_name', models.TextField()),
-                ('cat_gst', models.TextField()),
-            ],
-        ),
-        migrations.CreateModel(
-            name='Import',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('pdt_name', models.TextField()),
-                ('qty', models.TextField()),
-            ],
-        ),
-        migrations.CreateModel(
-            name='Invoice',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('pname', models.TextField()),
-                ('qty', models.TextField()),
-                ('unitprice', models.TextField()),
-                ('cname', models.TextField()),
-                ('cnumber', models.TextField()),
-                ('gst', models.TextField()),
-                ('dis', models.TextField()),
-                ('total', models.TextField()),
-            ],
-        ),
-        migrations.CreateModel(
-            name='Product',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('pdt_name', models.TextField()),
-                ('pdt_price', models.TextField()),
-                ('pdt_cat', models.TextField()),
-            ],
-        ),
         migrations.AlterField(
             model_name='greeting',
             name='when',
