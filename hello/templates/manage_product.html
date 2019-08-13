@@ -39,25 +39,10 @@
                      <td>{{p.pdt_name}}</td>
                      <td>{{p.pdt_cat}}</td>
                      <td>{{p.pdt_price}}</td>
-                     <td>
-                       <form action="/add_product/" method="post">
-            <input type="hidden" value="/manage_product/" name="page">
-            <input type="hidden" value="{{p.pdt_name}}" name="pdt_name">
-            <input type="hidden" value="{{p.pdt_price}}" name="pdt_price">
-            <input type="hidden" value="{{p.id}}" name="did">
-
-            <input type="submit" value="edit" class="btn btn-primary" onclick="return confirm('tumi ki sure?')">
-            
-          </form>
-
-                     </td>
+                     <td></td>
                      <td>
                        <form action="/delete/" method="post">
-                        <input type="hidden" name="page" value="/manage_product/">
-                        <input type="hidden" name="msg" value="Product deleted successfully, Click on 'OK'">
-                        <input type="hidden" name="check">
-                        <input type="hidden" name="did" value="{{p.id}}">
-                        <input type="hidden" value="2" name="check">
+                        <input type="hidden" name="d_id" value="{{p.id}}">
                         <input type="submit" value="DELETE" onclick="return confirm('Are you sure?')" class="btn btn-danger">
                       </form>
                      </td>

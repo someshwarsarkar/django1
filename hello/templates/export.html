@@ -48,8 +48,8 @@
                      <td>{{i.dis}}</td>
                      <td>{{i.total}}</td>
                      <td>
-                       <form action="/print/" target="_blank" method="post">
-                        <input type="hidden" name="did" value="{{i.id}}">
+                       <form action="/print/" method="post">
+                        <input type="hidden" name="i_id" value="{{i.id}}">
                         <input type="submit" class="btn btn-primary" value="PRINT">
                       </form>
                      </td>

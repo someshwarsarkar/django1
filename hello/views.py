@@ -5,98 +5,41 @@ from .models import Greeting
 from .models import Product
 from .models import Category
 from .models import Invoice
-from .models import Import
 
 # Create your views here.
 def index(request):
-    oc=Import.objects.all()
     # return HttpResponse('Hello from Python!')
-    return render(request, "index.html",{"oc":oc})
+    return render(request, "index.html")
 def login(request):
     return render(request, "login.html")
 def p_import(request):
     pname=Product.objects.all()
-    oc=Import.objects.all()
-    return render(request, "import.html", {'pname':pname,"oc":oc})
-def p_import_hid(request):
-    did=request.POST.get("did")
-    
-    qty=request.POST.get("qty")
-    oc=Import.objects.get(id=did)
-    oc.qty=int(oc.qty)+int(qty)
-    oc.save()
-
-    return render(request, "import_hid.html",)
+    return render(request, "import.html", {'pname':pname})
 def add_product(request):
-    did=request.POST.get("did")
-    pdt_name=request.POST.get("pdt_name")
-    pdt_price=request.POST.get("pdt_price")
-
-
     p=Category.objects.all()
-    return render(request, "add_product.html",{'p':p,"pdt_name":pdt_name, "pdt_price":pdt_price,"did":did})
+    return render(request, "add_product.html",{'p':p})
 def add_pdt_hid(request):
-    did=request.POST.get("did")
     pdt_name=request.POST.get("pdt_name")
     pdt_price=request.POST.get("pdt_price")
     pdt_cat=request.POST.get("pdt_cat")
-    if did == 'None':
-        obj=Product()
-        obj.pdt_name=pdt_name
-        obj.pdt_price=pdt_price
-        obj.pdt_cat=pdt_cat
-        obj.save()
-        oc=Import()
-        oc.pdt_name=pdt_name
-        oc.qty=0
-        oc.save()
-    else :
-        obj=Product.objects.get(id=did)
-        obj.pdt_name=pdt_name
-        obj.pdt_price=pdt_price
-        obj.pdt_cat=pdt_cat
-        obj.save()
-
-
-    
-    
-    
-    
-
-    
+    obj=Product()
+    obj.pdt_name=pdt_name
+    obj.pdt_price=pdt_price
+    obj.pdt_cat=pdt_cat
+    obj.save()
     return render(request, "add_pdt_hid.html",{"pdt_name":pdt_name, "pdt_price":pdt_price, "pdt_cat":pdt_cat})
 def manage_product(request):
     pdt=Product.objects.all()
     return render(request, "manage_product.html",{'pdt':pdt})
 def add_category(request):
-    did=request.POST.get("did")
-    cat_name=request.POST.get("cat_name")
-    cat_gst=request.POST.get("cat_gst")
-    
-
-    
-
-
-    return render(request, "add_category.html",{"cat_name":cat_name, "cat_gst":cat_gst,"did":did})
+    return render(request, "add_category.html")
 def add_cat_hid(request):
-    did=request.POST.get("did")
     cat_name=request.POST.get("cat_name")
     cat_gst=request.POST.get("cat_gst")
-    if did == 'None':
-        cobj=Category()
-        cobj.cat_name=cat_name
-        cobj.cat_gst=cat_gst
-        cobj.save()
-    else :
-        cobj=Category.objects.get(id=did)
-        cobj.cat_name=cat_name
-        cobj.cat_gst=cat_gst
-        cobj.save()
-
-    
-    
-    
-    
+    cobj=Category()
+    cobj.cat_name=cat_name
+    cobj.cat_gst=cat_gst
+    cobj.save()
     return render(request, "add_cat_hid.html", {"cat_name":cat_name, "cat_gst":cat_gst})
 def manage_category(request):
     cat=Category.objects.all()
@@ -108,37 +51,21 @@ def invoice(request):
     p=Product.objects.all()
     return render(request, "invoice.html", {'p':p})
 def invoice_hid(request):
-
     pname=request.POST.get("pname")
     qty=request.POST.get("qty")
     unitprice=request.POST.get("unitprice")
     cname=request.POST.get("cname")
     cnumber=request.POST.get("cnumber")
     dis=request.POST.get("dis")
-    gst=request.POST.get("gst")
-    total=((((int(unitprice)*int(qty))*int(gst)/100)+(int(unitprice)*int(qty)))-int(dis))
-    oc=Import.objects.get(pdt_name=pname)
-    c=int(oc.qty)-int(qty)
-    if c<0 :
-        msg="Product is out of stock"
-        return render(request, "invoice.html",{"msg":msg})
-    else :
-        iobj=Invoice()
-        iobj.pname=pname
-        iobj.qty=qty
-        iobj.unitprice=unitprice
-        iobj.cname=cname
-        iobj.cnumber=cnumber
-        iobj.dis=dis
-        iobj.gst=gst
-        iobj.total=total
-        iobj.save()
-        oc.qty=int(oc.qty)-int(qty)
-        oc.save()
-    
-    
-    oc.save()
-    return render(request, "invoice_hid.html", {"pname":pname, "qty":qty, "unitprice":unitprice, "cname":cname, "cnumber":cnumber, "dis":dis,"gst":gst,"total":total})
+    iobj=Invoice()
+    iobj.pname=pname
+    iobj.qty=qty
+    iobj.unitprice=unitprice
+    iobj.cname=cname
+    iobj.cnumber=cnumber
+    iobj.dis=dis
+    iobj.save()
+    return render(request, "invoice_hid.html", {"pname":pname, "qty":qty, "unitprice":unitprice, "cname":cname, "cnumber":cnumber, "dis":dis})
 def report(request):
     return render(request, "report.html")
 def contact_us(request):
@@ -154,26 +81,22 @@ def stock(request):
 def list(request):
     return render(request, "list.html")
 def delete(request):
-    did=request.POST.get("did")
-    page=request.POST.get("page")
-    msg=request.POST.get("msg")
-    check=request.POST.get("check")
-    if check == '2':
-        pdel=Product.objects.filter(id=did).delete()
-        oc=Import.objects.filter(id=did).delete()
-    else :
-        cdel=Category.objects.filter(id=did).delete()
-    
-
-    return render(request, "delete.html", {"did":did,"page":page,"msg":msg})
+    d_id=request.POST.get("d_id")
+    pdel=Product.objects.filter(id=d_id).delete()
+    return render(request, "delete.html", {"d_id":d_id})
 def cat_delete(request):
     c_id=request.POST.get("c_id")
     cdel=Category.objects.filter(id=c_id).delete()
     return render(request, "cat_delete.html", {"c_id":c_id})
 def print(request):
-    did=request.POST.get("did")
-    psel=Invoice.objects.get(id=did)
-    return render(request, "print.html",{"did":did, "psel":psel})
+    i_id=request.POST.get("i_id")
+    psel=Invoice.objects.filter(id=i_id)
+    pd=Invoice.objects.all()
+    for i in pd:
+        if (i.id==i_id):
+            cname=i.cname
+            break
+    return render(request, "print.html",{"i_id":i_id, "cname":cname})
 def lc(request):
     username=request.POST.get("username")
     password=request.POST.get("password")

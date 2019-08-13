@@ -18,12 +18,11 @@
 <div id="main" align="center">
    <div style="width: 100%; height: 50px; color: white;">
    </div>
-   
-    <h2 align="center" style="color: #8600b3;">Import Product{{msg}}</h2>
-   <form action="/import_hid/" method="post">
+   <div>
+    <h2 align="center" style="color: #8600b3;">Import Product</h2>
+   <form action="">
     <table class="table table-striped" border="1">
     <thead>
-
         <tr>   
       <th><p>Product Name</p></th>
        <th><p>Quantity</p></th>
@@ -34,58 +33,23 @@
     <tbody>
         <tr>
           <td>
-           <select name="did" class="form-control">
+           <select class="form-control" name="pdt_name">
              <option>--Select--</option>
              {% for i in pname %}
-             <option value="{{i.id}}">{{i.pdt_name}}</option>
+             <option value="{{i.pdt_name}}">{{i.pdt_name}}</option>
              {% endfor %}
            </select>
          </td>
-            <td><input class="form-control" type="number" name="qty"></td>
-
-            <td colspan="2" align="center" ><input type="submit" value="ADD"></td>
+            <td><input class="form-control" type="text" name="qty"></td>
         </tr>
-
-        
+        <tr>
+          <td colspan="2" align="center"><button class="btn btn-primary">ADD</button></td>
+        </tr>
 
     </tbody>
   </table>
-    </form><br>
-
-
-
-
-
-
-
-  
-    <table>
-
-      <thead>
-        <tr>   
-      <th><p>Product Name</p></th>
-       <th><p>Quantity</p></th>
-       </tr>
-    
-    </thead>
-
-    <tbody>
-      {% for i in oc %}
-        <tr>
-          <td>
-           
-             
-             {{i.pdt_name}}</td>
-            <td>{{i.qty}}</td>
-        </tr>
-        
-         {% endfor %}
-    </tbody>
-      
-    </table>
-   
-
-
+    </form>
+   </div>
 </div>
 </body>
 </html>
