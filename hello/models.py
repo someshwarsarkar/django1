@@ -20,3 +20,6 @@ class Invoice(models.Model):
 	gst=models.TextField()
 	dis=models.TextField()
 	total=models.TextField()
+class Import(models.Model):
+	pdt_name=models.TextField()
+	qty=models.TextField()

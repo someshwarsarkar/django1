@@ -33,14 +33,14 @@
     <tbody>
         <tr>
           <td>
-           <select class="form-control">
+           <select class="form-control" name="pdt_name">
              <option>--Select--</option>
              {% for i in pname %}
              <option value="{{i.pdt_name}}">{{i.pdt_name}}</option>
              {% endfor %}
            </select>
          </td>
-            <td><input class="form-control" type="text" name=""></td>
+            <td><input class="form-control" type="text" name="qty"></td>
         </tr>
         <tr>
           <td colspan="2" align="center"><button class="btn btn-primary">ADD</button></td>
