@@ -25,20 +25,6 @@ tr:nth-child(even) {
   background-color: #dddddd;
 }
 
-  #f{background-color: #ebe4c0;
-    padding: 5px;
-    padding-top: 50px;
-    position: absolute;
-      right: 0px;
-    height: 100%;
-  }
-  .g{
-    overflow-y: scroll;
-  }
-  .m{
-    width: 86%;
-    overflow-x: scroll;
-  }
   
 
   </style>
@@ -59,32 +45,47 @@ tr:nth-child(even) {
   {% include "navbar.html" %}
 
         
-        <div id="main" class="g">
+        <div id="main">
           <div style="width: 100%; height: 50px; color: white;">
    </div>
-          <div class="row">
+          
 
 
 
-            <div class="m" >
+            
+<form action="/invoice_hid/" name="frm" method="post">
 
+<table>
+  <tr>
+      <td><p>Coustomer Name</p>{{msg}}</td>
+      <td><p><input type="text" name="cname" placeholder="Enter Name" required=""></p></td>
+      <td><p>Coustomer number</p></td>
+      <td><p><input type="number" minlength="5" maxlength="13" name="cnumber" placeholder="Enter Number" required=""></p></td>
+      <td><p>GST</p></td>
+      <td><p><input type="number" name="gst" placeholder="%" required=""></p></td>
+      <td><p>Discount</p></td>
+      <td><p><input type="number" name="dis" placeholder="Ammount" required=""></p></td>
+    </tr>
+    </table>
     
     <INPUT type="button" value="Add Row" onclick="addRow('dataTable')" />
 
   <INPUT type="button" value="Delete Row" onclick="deleteRow('dataTable')" />
 
-<form action="/invoice_hid/" name="frm" method="post">
+
+  
 <table id="dataTable" cellspacing="0" border=1>
     <tr>
       <td><INPUT type="checkbox" name="chk"/></td>
-      <td><select name="pname">
+      <td><select name="pname" required="">
         <option>--Select Product--</option>
         {% for i in p %}
-            <option value="{{i.id}}">{{i.pdt_name}}</option>
+
+            <option value="{{i.pdt_name}}">{{i.pdt_name}}</option>
             {% endfor %}
           </select></td>
       <td><input type="number" min="1" name="qty" Placeholder="Quantity" required=""></td>
-      <td><input type="text" name="unitprice" placeholder="Unit Price" required=""></td>
+      <td><input type="number" name="unitprice" placeholder="Unit Price" required=""></td>
     </tr>
 </table>
 <input type="submit" value="Calculate">
@@ -95,23 +96,11 @@ tr:nth-child(even) {
   
 
     
-  <div  id="f">
-      <p>Coustomer Name</p>
-      <p><input type="text" name="cname" placeholder="Enter Name"></p>
-      <p>Coustomer number</p>
-      <p><input type="number" minlength="5" maxlength="13" name="cnumber" placeholder="Enter Number"></p>
-      <p>GST</p>
-      <p><input type="hidden" name="gst" placeholder="%"></p>
-      <p>Discount</p>
-      <p><input type="number" name="dis" placeholder="%"></p>
-      <p><button type="submit" class="btn btn-success">SUBMIT</button></p>
-    </form>
-  </div>
-
+  
      
 
-  </div>
-  </div>
+  
+  
   
 
 

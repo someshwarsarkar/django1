@@ -29,10 +29,10 @@
     <h2 align="center" style="color: #8600b3;">Add Product</h2>
     <form align="center" method="post" action="/add_pdt_hid/" class="frm">
       <p><h4>Product Name</h4></p>
-      <p><input type="text" name="pdt_name" placeholder="Product name" required=""></p>
+      <p><input type="text" name="pdt_name" value="{{pdt_name}}" placeholder="Product name" required=""></p>
       <p><h4>Price</h4></p>
-      <p><input type="number" name="pdt_price" placeholder="Enter Price in Rs"  required=""></p>
-      
+      <p><input type="number" name="pdt_price" value="{{pdt_price}}" placeholder="Enter Price in Rs"  required=""></p>
+         <input type="hidden" name="did" value="{{did}}" >
       <p><h4>Category</h4></p>
       <p><select name="pdt_cat" class="dropdown-toggle">
         <option>--Select--</option>
