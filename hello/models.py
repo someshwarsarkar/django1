@@ -23,3 +23,4 @@ class Invoice(models.Model):
 class Import(models.Model):
 	pdt_name=models.TextField()
 	qty=models.TextField()
+	

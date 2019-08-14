@@ -5,6 +5,35 @@
 	<title>CarGo</title>
 	{% include "hlink.html" %}
 
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+
+  $('.counter').each(function() {
+    var $this = $(this),
+        countTo = $this.attr('data-count');
+
+    $({ countNum: $this.text()}).animate({
+      countNum: countTo
+    },
+
+    {
+
+      duration: 3000,
+      easing:'linear',
+      step: function() {
+        $this.text(Math.floor(this.countNum));
+      },
+      complete: function() {
+        $this.text(this.countNum);
+      }
+    });
+  });
+
+});
+
+  </script>
+
       <script src = "https://code.highcharts.com/highcharts.js"></script>  
       <script src = "https://code.highcharts.com/highcharts-3d.js"></script>
       <script type="text/javascript">
@@ -17,7 +46,7 @@
                }
             };
             var title = {
-               text: 'Contents of Highsoft\'s weekly fruit delivery'   
+               text: 'Contents of Product in stock'   
             };   
             var subtitle = {
                text: '3D donut in Highcharts'
@@ -76,13 +105,10 @@
     <!-- card container as row  -->
            <div class="row">
             <!-- card 1 container  -->
-            <div class="col-xl-3 col-sm-6 mb-3">
-            <div class="card text-white bg-danger o-hidden h-100">
+            <div class="col-sm-4">
+              <div class="card text-white bg-primary o-hidden h-100">
               <div class="card-body">
-                <div class="card-body-icon">
-                  <i class="fas fa-fw fa-life-ring"></i>
-                </div>
-                <div class="mr-5">13 New Tickets!</div>
+                <h3><span class="counter"  data-count="{{d}}">0</span></h3>
               </div>
               <a class="card-footer text-white clearfix small z-1" href="#">
                 <span class="float-left">View Details</span>
@@ -91,16 +117,16 @@
                 </span>
               </a>
             </div>
+
+            
           </div>
           <!-- /card 1 container  -->
           <!-- card 2 container  -->
-          <div class="col-xl-3 col-sm-6 mb-3">
-            <div class="card text-white bg-danger o-hidden h-100">
+          <div class="col-sm-4">
+            <div class="card text-white bg-success o-hidden h-100">
               <div class="card-body">
-                <div class="card-body-icon">
-                  <i class="fas fa-fw fa-life-ring"></i>
-                </div>
-                <div class="mr-5">13 New Tickets!</div>
+                
+                <h3><span class="counter"  data-count="{{f}}">0</span></h3>
               </div>
               <a class="card-footer text-white clearfix small z-1" href="#">
                 <span class="float-left">View Details</span>
@@ -113,13 +139,11 @@
           <!-- /card 2 container  -->
           <!-- card 3 container  -->
 
-          <div class="col-xl-3 col-sm-6 mb-3">
-            <div class="card text-white bg-danger o-hidden h-100">
+          <div class="col-sm-4">
+            <div class="card text-white bg-warning o-hidden h-100">
               <div class="card-body">
-                <div class="card-body-icon">
-                  <i class="fas fa-fw fa-life-ring"></i>
-                </div>
-                <div class="mr-5">13 New Tickets!</div>
+                <h3><span class="counter"  data-count="{{y}}">0</span></h3>
+                
               </div>
               <a class="card-footer text-white clearfix small z-1" href="#">
                 <span class="float-left">View Details</span>
@@ -130,25 +154,6 @@
             </div>
           </div>
           <!-- /card 3 container  -->
-          <!-- card 4 container  -->
-
-          <div class="col-xl-3 col-sm-6 mb-3">
-            <div class="card text-white bg-danger o-hidden h-100">
-              <div class="card-body">
-                <div class="card-body-icon">
-                  <i class="fas fa-fw fa-life-ring"></i>
-                </div>
-                <div class="mr-5">13 New Tickets!</div>
-              </div>
-              <a class="card-footer text-white clearfix small z-1" href="#">
-                <span class="float-left">View Details</span>
-                <span class="float-right">
-                  <i class="fas fa-angle-right"></i>
-                </span>
-              </a>
-            </div>
-          </div>
-         <!-- /card 4 container  -->
           
 
 
@@ -164,8 +169,19 @@
       <div class="col-md-6">
       
       {% for i in oc %}
-                  {{i.pdt_name}} {{i.qty}} 
-                  {% endfor %}
+      {% with v=i.qty %}
+       {{v}}
+      {% if v < 10 %}
+
+                  <td>{{i.pdt_name}} {{v}}</td>
+                  
+      {% endif %}
+      {% endwith %}
+
+
+      {% endfor %}
+
+
     </div>
   </div>
 </div>
@@ -177,6 +193,7 @@
 </div>
 
 </body>
+
 
 
 </html>

@@ -10,8 +10,37 @@ from .models import Import
 # Create your views here.
 def index(request):
     oc=Import.objects.all()
+    obj=Product.objects.all()
+    invoice=Invoice.objects.all()
+
+    c=0
+    d=0
+    a=0
+    b=0
+    e=0
+    f=0
+    k=0
+    y=0
+    for i in invoice:
+        k=int(i.total)
+        f=(e+k)
+        e=f
+        pass
+
+    for i in oc:
+        for j in obj:
+            a=int(i.qty)
+            b=int(j.pdt_price)
+            d=c+(a*b)
+            c=d
+            break
+        pass
+    
+    
+
+    y=f-d
     # return HttpResponse('Hello from Python!')
-    return render(request, "index.html",{"oc":oc})
+    return render(request, "index.html",{"oc":oc,"d":d,"f":f,"y":y})
 def login(request):
     return render(request, "login.html")
 def p_import(request):
@@ -32,7 +61,7 @@ def add_product(request):
     pdt_name=request.POST.get("pdt_name")
     pdt_price=request.POST.get("pdt_price")
 
-
+    
     p=Category.objects.all()
     return render(request, "add_product.html",{'p':p,"pdt_name":pdt_name, "pdt_price":pdt_price,"did":did})
 def add_pdt_hid(request):
@@ -56,6 +85,9 @@ def add_pdt_hid(request):
         obj.pdt_price=pdt_price
         obj.pdt_cat=pdt_cat
         obj.save()
+        oc=Import.objects.get(id=did)
+        oc.pdt_name=pdt_name
+        oc.save()
 
 
     
@@ -131,7 +163,7 @@ def invoice_hid(request):
         iobj.cnumber=cnumber
         iobj.dis=dis
         iobj.gst=gst
-        iobj.total=total
+        iobj.total=int(total)
         iobj.save()
         oc.qty=int(oc.qty)-int(qty)
         oc.save()
